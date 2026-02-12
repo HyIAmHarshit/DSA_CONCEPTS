@@ -63,24 +63,37 @@ public class Strings{
             System.out.print(sb);
        
         }
+
+       public static void strcom(String str) {
+    if (str == null || str.length() == 0) {
+        System.out.println("");
+        return;
+    }
+
+    StringBuilder sb = new StringBuilder();
+    int count = 1;
+
+    for (int i = 1; i < str.length(); i++) {
+        if (str.charAt(i) == str.charAt(i - 1)) {
+            count++;
+        } else {
+            sb.append(str.charAt(i - 1));
+            sb.append(count);
+            count = 1;
+        }
+    }
+
+    sb.append(str.charAt(str.length() - 1));
+    sb.append(count);
+
+    System.out.println(sb.toString());
+}
+
+
     
 
     public static void main(String args[]){
         // char arr[]={'a','b','c','d'};
-        // String str = "abcd";
-        // String strr = new String("xyx");
-
-        // //Strings are IMMUTABLE
-
-        // Scanner sc = new Scanner(System.in);
-        // String name;
-        // name=sc.nextLine();
-        // System.out.println(name);  
-
-        // String fullname= "Tony Stark";
-        // System.out.println(fullname.length());
-
-        //concatination
         // String  firstname = "Harshit";
         // String lastname = "Khandelwal";
         // String fullname = firstname + " " + lastname;
@@ -129,7 +142,10 @@ public class Strings{
         // System.out.print(sb);
 
         //question
-        firstuppercase("hy i am harshit");
+        // firstuppercase("hy i am harshit");
+
+        //question
+        strcom("aaabbccddd");
 
 
          
